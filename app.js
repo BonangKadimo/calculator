@@ -11,7 +11,11 @@ divResult = function divide(a,b){
     return a/b;
 }
 // Variables to store user input and intermediate values
+const audio = new Audio();
+audio.src = "/audio/mixkit-modern-click-box-check-1120.wav"
 
+const audio1 = new Audio();
+audio1.src = "/audio/mixkit-cool-interface-click-tone-2568.wav"
 let firstNum;
 let secondNUm; 
 let operator;
@@ -45,7 +49,7 @@ let dumpDisplayValue = false;
 const display = document.getElementById('display')
 const one = document.getElementById('one')
 one.addEventListener('click', function(){
-
+    audio.play();
     display.value += '1'
     console.log('-------------------');
     inputValue = display.value;
@@ -61,7 +65,7 @@ one.addEventListener('click', function(){
 
 const two = document.getElementById('two')
 two.addEventListener('click', function(){
-
+    audio.play();
     display.value += '2'
     inputValue = display.value;
     if(operatorTrigger == true){
@@ -72,7 +76,7 @@ two.addEventListener('click', function(){
 })
 const thee = document.getElementById('three')
 three.addEventListener('click', function(){
-
+    audio.play();
     display.value += '3'
     inputValue = display.value;
     if(operatorTrigger == true){
@@ -83,7 +87,7 @@ three.addEventListener('click', function(){
 })
 const four = document.getElementById('four')
 four.addEventListener('click', function(){
-
+    audio.play();
     display.value += '4'
     inputValue = display.value;
     if(operatorTrigger == true){
@@ -94,6 +98,7 @@ four.addEventListener('click', function(){
 })
 const five = document.getElementById('five')
 five.addEventListener('click', function(){
+    audio.play();
     display.value += '5'
     inputValue = display.value;
     if(operatorTrigger == true){
@@ -105,6 +110,7 @@ five.addEventListener('click', function(){
 
 const six = document.getElementById('six')
 six.addEventListener('click', function(){
+    audio.play();
     display.value += '6'
     inputValue = display.value;
     if(operatorTrigger == true){
@@ -115,6 +121,7 @@ six.addEventListener('click', function(){
 })
 const seven = document.getElementById('seven')
 seven.addEventListener('click', function(){
+    audio.play();
     display.value += '7'
     inputValue = display.value;
     if(operatorTrigger == true){
@@ -125,6 +132,7 @@ seven.addEventListener('click', function(){
 })
 const eight = document.getElementById('eight')
 eight.addEventListener('click', function(){
+    audio.play();
     display.value += '8'
     inputValue = display.value;
     if(operatorTrigger == true){
@@ -135,6 +143,7 @@ eight.addEventListener('click', function(){
 })
 const nine = document.getElementById('nine')
 nine.addEventListener('click', function(){
+    audio.play();
     display.value += '9'
     inputValue = display.value;
     if(operatorTrigger == true){
@@ -145,6 +154,7 @@ nine.addEventListener('click', function(){
 })
 const zero = document.getElementById('zero')
 zero.addEventListener('click', function(){
+    audio.play();
     display.value += '0'
     inputValue = display.value;
     if(operatorTrigger == true){
@@ -157,8 +167,9 @@ zero.addEventListener('click', function(){
 // Resets the display value and expression
 const clear = document.getElementById('clear')
 clear.addEventListener('click', function(){
-    
-    display.value = ''
+    audio.play();
+    display.value = '';
+    display.placeholder = '';
     expression = '';
 })
 const plus = document.getElementById('plus');
@@ -174,6 +185,7 @@ let expression ='';
 // The result is displayed, and the expression is updated
 plus.addEventListener('click', function(){
     //console.log('addExpressionToArrayTriggered')
+    audio.play();
     expression += inputValue + '+'
     console.log('expression');
     console.log(expression);
@@ -206,6 +218,7 @@ plus.addEventListener('click', function(){
     } 
 })
 minus.addEventListener('click', function(){
+    audio.play();
     expression += inputValue + '-'
     console.log(expression)
     display.value = ''
@@ -225,6 +238,7 @@ minus.addEventListener('click', function(){
     
 })
 times.addEventListener('click', function(){
+    audio.play();
     expression += inputValue + '*'
     console.log(expression)
     display.value = ''
@@ -243,6 +257,7 @@ times.addEventListener('click', function(){
     }
 })
 obelus.addEventListener('click', function(){
+    audio.play();
     expression += inputValue + '/'
     console.log(expression)
     display.value = ''
@@ -263,8 +278,12 @@ obelus.addEventListener('click', function(){
 // Equals button event handler
 // It evaluates the expression and displays the result
 equals.addEventListener('click', function(){
-    tot = operate(expression[1],expression[0], expression[2]);
-    display.value = tot
+    audio1.play();
+    
+    //expression += display.value;
+    result = addExpressionToArray();
+    tot = operate(result[1],parseInt(result[0]), parseInt(result[2]));
+    display.placeholder = tot
     console.log(expression)
 
 })

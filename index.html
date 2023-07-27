@@ -5,32 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
 </head>
 <br>
-    <!--Numbers-->
-    <button id="zero">0</button>
-    <button id="one">1</button>
-    <button id="two">2</button>
-    <button id="three">3</button>
-    <button id="four">4</button>
-    <button id="five">5</button>
-    <button id="six">6</button>
-    <button id="seven">7</button>
-    <button id="eight">8</button>
-    <button id="nine">9</button>
+<form action="/url" method="GET">
+    <input type="text" id="display" placeholder="">
+</form>
+<div id="cancel">
+    <button id="clear" class="big-button">C</button>    
+</div>
+<div id="numbers">
+        <!--Numbers-->
+    <button id="zero" class="big-button">0</button>
+    <button id="one" class="big-button">1</button>
+    <button id="two" class="big-button">2</button>
+    <button id="three" class="big-button">3</button>
+    <button id="four" class="big-button">4</button>
+    <button id="five" class="big-button">5</button>
+    <button id="six" class="big-button">6</button>
+    <button id="seven" class="big-button">7</button>
+    <button id="eight" class="big-button">8</button>
+    <button id="nine" class="big-button">9</button>
+</div>
+
+
 
     <br></br>
+<div id="operators">
     <!--Operators-->
-    <button id="plus">+</button>
-    <button id="minus">-</button>
-    <button id="times">*</button>
-    <button id="obelus">/</button>
-    <button id="equals">=</button>
+    <button id="plus" class="big-button">+</button>
+    <button id="minus" class="big-button">-</button>
+    <button id="times" class="big-button">*</button>
+    <button id="obelus" class="big-button">/</button>
+    <button id="equals" class="big-button">=</button>
+</div>
 
-    <form action="/url" method="GET">
-        <input type="text" id="display" placeholder="">
-    </form>
-    <button id="clear">C</button>
+
+
 
 </body>
 </html>
